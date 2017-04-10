@@ -1,0 +1,52 @@
+<!-- 捕获键盘按键简单写法，不用再传入事件对象;只要得知其对应键值code[所有的]或者英文[特定几个注：{只封装了常用的}]，加在事件后面写入即可完成对应捕获 
+常用按键：回车键  :  @keyup.13  或者  @keyup.enter
+ 上、下、左、右、
+          
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘事件</title>
+</head>
+<body>
+	<div id="box">
+	<input type="text" v-on:keydown.space="show">
+	<!-- show()和show都行；加不加（）都行 -->
+	<input type="text" v-on:keydown.esc="show()">
+		<input type="text" v-on:keydown.13="show()">
+		<input type="text" v-on:keydown.65="show()">
+		<input type="text" v-on:keydown.8="show()">
+		<hr>
+		<input type="text" @keyup.enter="show()">
+		<hr>
+		<input type="text" v-on:keydown.down="show()">
+		<hr> 
+		<input type="text" v-on:keydown.up="show()">
+		<hr>
+		<input type="text" @keyup.left="show()">
+		<hr>
+		<input type="text" @keydown.right="show()">
+		<input type="text" v-on:keydown.37="show()">
+		<!-- 左右键失效？ -->
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el:"#box",
+		data:{},
+		methods:{
+			// show:function(ev){
+			// 	if(ev.keyCode==13){
+			// 		alert("您按回车键了");
+			// 	}
+				
+			// },
+			show:function(){
+				alert("您按回车键了");
+			}
+		}
+	});
+</script>
+</html>

@@ -1,0 +1,28 @@
+<!-- vue中data里放的是数据(属性：值);而方法放在vue单独提供的methods接口里;
+里面放的格式和data一样仍是一个json格式{} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基础事件</title>
+</head>
+<body>
+	<div id="box">
+		<input type="button" name="" value="按钮" v-on:click=show()>
+		<input type="button" name="" value="按钮2" v-on:click="show()">
+		                                       <!-- 有无引号都可以，已验证 -->
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:"#box",
+		data:{},
+		methods:{
+			show:function(){
+				alert(1);
+			}
+		}
+	});
+</script>
+</html>

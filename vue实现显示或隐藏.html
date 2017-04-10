@@ -1,0 +1,28 @@
+<!-- vue中用 v-show=true/false 来控制显示或隐藏 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-show</title>
+</head>
+<body>
+	<div id="box">
+		<input type="button" value="点击隐藏或显示" v-on:click="a=false" v-on:dblclick="a=true">
+		<div style="width:100px;height:100px;background:red;" v-show="a">
+			
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:"#box",
+		data:{
+			a:true
+		},
+		methods:{
+			
+		}
+	});
+</script>
+</html>

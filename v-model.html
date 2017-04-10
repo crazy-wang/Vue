@@ -1,0 +1,45 @@
+<!-- 常用指令
+	——用来扩展html标签功能、属性
+	v-model:一般用在表单元素（input）上  双向数据绑定
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-model</title>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var vm=new Vue({
+				el:"#box",
+				data:{
+					msg:"welcome Vue!",
+					msg2:123,
+					msg3:true,
+					arr:['apple','fruit','pear'],
+					json:{a:"my",b:"very",c:"good"}
+				}
+			});
+		};
+	</script>
+</head>
+<body>
+<div id="box">
+	<input type="text" v-model="msg">
+	<input type="text" v-model="msg">
+	<br />
+	{{msg}}
+	<input type="text" v-model="msg">
+	<br />
+	{{msg2}}
+	<br />
+	{{msg3}}
+	<br />
+	{{arr}}
+	<br />
+	{{json}}
+	<!-- {msg} -->
+
+<!-- {{msg}} -->
+</body>
+</html>

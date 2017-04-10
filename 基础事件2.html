@@ -1,0 +1,45 @@
+<!-- vue中data里放的是数据(属性：值);而方法放在vue单独提供的methods接口里;
+里面放的格式和data一样仍是一个json格式{} -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基础事件</title>
+</head>
+<body>
+	<div id="box">
+		<input type="button" name="" value="添加click" v-on:click=add()>
+		<input type="button" name="" value="添加double" v-on:dblclick="add()">
+		<input type="button" name="" value="按钮over" v-on:mouseover="show()">
+		<input type="button" name="" value="按钮out" v-on:mouseout="show()">
+		<input type="button" name="" value="按钮down" v-on:mousedown="add()">
+		<input type="button" name="" value="按钮up" v-on:mouseup="add()">
+		      <!-- click/mousedown/mouseup的区别;有无引号都可以，已验证 ;-->
+		<br>
+		<ul>
+			<li v-for="value in arr">
+				{{value}}
+			</li>
+		</ul>
+
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	var vm=new Vue({
+		el:"#box",
+		data:{
+			arr:['apple','banana','pink'],
+			json:{a:"name",b:"age",c:"sex"}
+		},
+		methods:{
+			show:function(){
+				alert(1);
+			},
+			add:function(){
+				this.arr.push("tomato");
+			}
+		}
+	});
+</script>
+</html>

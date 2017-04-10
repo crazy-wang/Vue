@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var v=new Vue({
+				el:"#box",
+				// el里面放匹配选择器
+				data:{
+					msg:"welcoml Vue!"
+				}
+				// data值为一个Json,里面放了什么数据 到外面(对应作用域内)就能用了
+			});
+		};
+		// el,和data是定死的，不能改成其他的
+	</script>
+</head>
+<body>
+	<div id="box">
+		{{msg}}
+	</div>
+</body>
+</html>
+<!-- vue过程：先准备一片html代码，然后再new Vue一个实例 -->

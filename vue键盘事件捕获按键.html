@@ -1,0 +1,30 @@
+<!-- 捕获键盘按键，必须传入事件对象 $event -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘事件</title>
+</head>
+<body>
+	<div id="box">
+		<input type="text" v-on:keydown="show($event)">
+		<hr>
+		<input type="text" @keyup="show($event)">
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el:"#box",
+		data:{},
+		methods:{
+			show:function(ev){
+				if(ev.keyCode==13){
+					alert("您按回车键了");
+				}
+				
+			},
+		}
+	});
+</script>
+</html>

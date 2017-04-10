@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="vue.js"></script>
+	
+</head> 
+<body>
+	<div id="box">
+		<ul>
+			<li v-for="(value,index) in str">
+				 {{index}} {{value}}
+			</li>
+		</ul>
+		<hr>
+		<ul >
+			<li v-for="(item,index) in json">
+				{{index}} {{item}} 
+			</li>
+			<!-- json的索引较特殊 -->
+		</ul>
+		<hr>
+		<ul>
+			<li v-for="(suibiandezhi,yiyangdesuoyin) in str">
+				{{suibiandezhi}} {{yiyangdesuoyin}}
+			</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+		var vm=new Vue({
+			el:"#box",
+			data:{
+				arr:["one","two","three"],
+				json:{a:"my",b:"very",c:"good"},
+				str:"sffdfdff"
+			}
+		});
+	</script>
+</html>

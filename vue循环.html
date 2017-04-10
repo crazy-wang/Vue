@@ -1,0 +1,37 @@
+<!-- 常用指
+	——用来扩展html标签功能、属性
+	v-for:vue中的循环  v-for="变量名 in 数组或对象或字符串"；json的索引较特殊
+	json由 key:value组成，所以获得的索引是其key值
+	vue2.0 和1.0中v-for的循环索引写法不一样。详见图片
+	v-for="(k,v) in json"  {{k}}  {{v}}
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>v-model</title>
+	<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		window.onload=function(){
+			var vm=new Vue({
+				el:"#box",
+				data:{
+					arr:['apple','fruit','pear'],
+					json:{a:"my",b:"very",c:"good"},
+					str:"sffdfdff"
+				}
+			});
+		};
+	</script>
+</head>
+<body>
+<div id="box">
+	<ul>
+	<!--<li v-for="value in arr">
+		<li v-for="value in json"> -->
+		<li v-for="value in str">
+			{{value}}  
+		</li>
+	</ul>
+</body>
+</html>

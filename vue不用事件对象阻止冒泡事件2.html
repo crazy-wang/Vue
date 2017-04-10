@@ -1,0 +1,31 @@
+<!-- 阻止冒泡写法2: @click.stop="show()"  @事件.stop-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>阻止冒泡事件</title>
+</head>
+<body>
+	<div id="box">
+		<div class="box2" @click="show2()">
+			<input type="button" value="按钮" @click.stop="show()">
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el:"#box",
+		data:{},
+		methods:{
+			show:function(){
+				alert(1);
+				
+			},
+			show2:function(){
+				alert(2);
+			}
+		}
+	});
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!-- 简写:用 @ 代替 v-on:  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>@代替v-on:</title>
+</head>
+<body>
+	<div id="box">
+		<!-- <input type="button" value="按钮" v-on:click="show()" name=""> -->
+		<input type="button" value="按钮" @click="show()" name="">
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el:"#box",
+		data:{},
+		methods:{
+			show:function(){
+				alert(1);
+			}
+		}
+	});
+</script>
+</html>

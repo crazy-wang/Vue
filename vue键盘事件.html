@@ -1,0 +1,29 @@
+<!-- 两个常用键盘事件@keydown  @keyup     事件对象.keyCode -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>键盘事件</title>
+</head>
+<body>
+	<div id="box">
+		<input type="text" v-on:keydown="show($event)">
+		<hr>
+		<input type="text" @keyup="show($event)">
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+<script type="text/javascript">
+	new Vue({
+		el:"#box",
+		data:{},
+		methods:{
+			show:function(ev){
+				alert(ev.keyCode);
+				// 有错误，所有字母都弹出229，不变值
+				// 问题原因:输入字母时,必须切换成英文输入法
+			},
+		}
+	});
+</script>
+</html>
