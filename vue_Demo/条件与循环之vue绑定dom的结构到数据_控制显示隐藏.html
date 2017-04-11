@@ -1,0 +1,28 @@
+<!-- 
+这个例子演示了我们不仅可以绑定DOM文本到数据，还可以绑定DOM结构到数据
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	<div id="box">
+		<p v-if="false">现在你看bu到我了</p>
+		<p v-if="true">现在你看到我了</p>
+		<p v-if="seen">现在你看到我了ba</p>
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#box",
+			data:{
+				seen:true,
+				// seen:false,
+			}
+		});		
+	</script>
+</html>

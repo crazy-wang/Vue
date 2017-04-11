@@ -1,0 +1,30 @@
+<!-- vue中用v-on指令绑定一个事件监听器,通过它调用vue实例中定义的方法 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	<div id="box">
+		<p>{{message}}</p>
+		<button v-on:click="reverseMessage">逆转消息</button>
+		<button @click="reverseMessage">简写逆转消息</button>
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#box",
+			data:{
+				message:"Hello Vue"
+			},
+			methods:{
+				reverseMessage:function(){
+					this.message=this.message.split('').reverse().join('');
+				}
+			}
+		});		
+	</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>指令</title>
+	
+</head>
+<body>
+	<div id="box">
+		<span v-bind:title="message"><!-- 将这个元素节点的title属性和vue实例的message属性保持一致
+		数据放在data里，所以不用去管dom，只关注数据就行,数据变化vue自动渲染dom变化
+		 -->
+			鼠标悬停几秒试试看
+		</span>
+		<hr>
+		<span :title="message">我是简写</span>
+		<hr>
+		<span title="message">我不是简写,我没:</span>
+		<!-- 简写 
+		v-bind绑定属性简写直接: ，事件绑定简写用@
+		-->
+		<!-- <span @click="message2">
+			我也可以o
+		</span> -->
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#box",
+			data:{
+				message:"页面加载于"+new Date(),
+			},
+			// methods:{
+			// 	message2:function(){
+			// 		alert(1);
+			// 	}
+			// }
+		});		
+	</script>
+</html>

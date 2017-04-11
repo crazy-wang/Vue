@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	
+</head>
+<body>
+	<div id="box">
+		<ol>
+			<li v-for="value in arrs">
+				{{value}}
+			</li>
+				
+		</ol>
+		<hr>
+		<ul>
+			<li v-for="todo in todos">
+				{{todo.text}}
+			</li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+		var vm=new Vue({
+			el:"#box",
+			data:{
+				arrs:["apple","pink","red"],
+				todos:[
+					{text:'学习 javascript'},
+					{text:'学习 vue'},
+					{text:'整个牛项目'}
+				]
+			}
+		});		
+		//控制台操作结果
+		// vm.todos.push({text:"新项目"})
+		// 4
+		// vm.todos
+		// [Object, Object, Object, Object]
+	</script>
+</html>

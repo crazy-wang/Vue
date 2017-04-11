@@ -1,0 +1,39 @@
+<!-- 组件系统是vue的一个重要概念,它是一种抽象,允许我们使用小型、自包含和通常可复用的组件构建大型应用。
+
+在vue里,一个组件本质上是一个拥有预定义选项的一个vue实例
+在vue中注册组件很简单: -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>生命周期</title>
+	
+</head>
+<body>
+	<div id="box">
+		{{msg}}
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+			new Vue({
+				el:"#box",
+				data:{
+					msg:"你好吗",
+				},
+					// created:function(){
+					// 	alert("vue实例已经创建了就执行");
+					// },
+					// beforeCompile:function(){
+					// 	alert("编译之前执行")
+					// },
+					compiled:function(){
+						alert("编译之后执行")
+					},
+					ready:function(){
+						alert("插入到文档中了执行")
+					}
+				
+			})
+	</script>
+</html>

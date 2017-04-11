@@ -1,0 +1,39 @@
+<!-- 组件系统是vue的一个重要概念,它是一种抽象,允许我们使用小型、自包含和通常可复用的组件构建大型应用。
+
+在vue里,一个组件本质上是一个拥有预定义选项的一个vue实例
+在vue中注册组件很简单: -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>组件</title>
+	
+</head>
+<body>
+	<div id="box">
+		<ol>
+			<todo-item v-for="item in arrs" v-bind:todo="item">	
+				这里有字不会被显示出来	  
+			</todo-item>		
+		</ol>
+	</div>
+</body>
+<script type="text/javascript" src="vue.js"></script>
+	<script type="text/javascript">
+			// 定义一个名为 todo-item 的新组件
+			Vue.component('todo-item',{
+				props:['todo'],
+				template:'<li>这里有字{{todo.text}}会被显示出来</li>'
+			})
+			var vm=new Vue({
+				el:"#box",
+				data:{
+					arrs:[
+						{text:'素材'},
+						{text:'音乐'},
+						{text:'评估'}
+					]
+				}
+			})
+	</script>
+</html>
